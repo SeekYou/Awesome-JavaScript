@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/1.10.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="post">
+        Normal text and then a <a href="http://jb51.net">link</a> and then more text.
+    </div>
+    <script>
+    $("div a").click(function() {
+        // Do something  
+        console.log('1');
+        alert('1')
+    });
+
+    $("div a").click(function(e) {
+        // Do something else  
+        console.log('2');
+        alert('2')
+        e.stopImmediatePropagation();
+    });
+
+    $("div a").click(function() {
+        // THIS NEVER FIRES  
+        console.log('3');
+        alert('3')
+    });
+
+    $("div").click(function() {
+        // THIS NEVER FIRES  
+        console.log('4');
+        alert('4')
+    });
+    </script>
+</body>
+
+</html>
