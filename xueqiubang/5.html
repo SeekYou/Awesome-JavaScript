@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SVG</title>
+    <style>
+    .container {
+        position: relative;
+        display: inline-block;
+    }
+
+    .mask {
+        position: absolute;
+        width: 400px;
+        height: 284px;
+        background-image: url("http://exam.keepasset.com/img/sample_image_4_svg.jpg");
+        opacity: 0.4;
+    }
+
+    .clip-path {
+        clip-path: url(#svgPath);
+        -webkit-clip-path: url(#svgPath);
+    }
+    
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="mask">
+        </div>
+        <img src="http://exam.keepasset.com/img/sample_image_4_svg.jpg" class="clip-path">
+    </div>
+
+    <svg height="0" width="0">
+            <defs>
+                <clipPath id="svgPath">
+                    <circle stroke="#000000" stroke-miterlimit="10" cx="115" cy="80" r="55"></circle>
+                    <circle stroke="#000000" stroke-miterlimit="10" cx="230" cy="55" r="55"></circle>
+                    <circle stroke="#000000" stroke-miterlimit="10" cx="200" cy="180" r="55"></circle>
+                </clipPath>
+            </defs>
+    </svg>
+</body>
+
+</html>

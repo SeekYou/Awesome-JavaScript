@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var someString = '';
+		var charArray = someString.split('');
+
+		function arrange(arr, i, j) {
+			if (i !== j) {
+				var temp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = temp;
+			}
+		}
+
+		function getResult(arr) {
+			(function fn(n) {
+				for(var i=n,l=arr.length;i<l;i++) {
+					arrange(arr,i,n);
+					if (n+1<l-1) {
+						fn(n+1)
+					} else {
+						console.log(arr);
+					}
+					arrange(arr,i,n)
+				}
+			})(0)
+		}
+
+		getResult(charArray);
+	</script>
+</body>
+</html>
